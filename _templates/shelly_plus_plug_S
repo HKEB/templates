@@ -16,3 +16,9 @@ link3: https://www.conrad.com/p/shelly-plus-plug-s-socket-wi-fi-bluetooth-275731
 link4: https://www.idealo.de/preisvergleich/OffersOfProduct/202375445_-plus-plug-5-shelly.html
 ---
 All 4 Leds only programmable via Berry. See <https://github.com/blakadder/templates/issues/1740>
+---
+For the newer Shelly plus Plug S V2 if the temperature is not showing correctly:
+The temperature circuit seems to be the same analog circuits as the one on the Shelly Plus 1.
+GPIO 33 is an NTC thermistor with a ?10k bridge resistor. 
+Go to the Console and use “adcparam1 2, 10000, 10000, 3350” to get a sensible value (calibration needed!). 
+Please keep in mind that the temperature sensor measures the temperatur inside! the plug which is higher than the sourrounding temperatur. 
